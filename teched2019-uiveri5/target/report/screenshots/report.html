@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    .suites-menu {
+      width: 100%;
+      background-color: #add8e6;
+    }
+
+    .suites-menu .name {
+      display: inline-block;
+      padding: 10px;
+    }
+
+    .suites-menu .name.selected {
+      background-color: #90c9dc;
+      font-weight: 600;
+    }
+
+    .suite {
+      position: absolute;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .summary {
+      padding: 10px 20px;
+    }
+
+    .summary span {
+      padding-right: 20px;
+    }
+
+    .specs {
+      display: flex;
+    }
+
+    .specs-menu {
+      align-self: flex-start;
+      width: 500px;
+      background-color: #add8e6;
+    }
+
+    .specs-menu .selected {
+      background-color: #90c9dc;
+    }
+
+    .specs .name {
+      padding: 10px;
+      border-bottom: 1px solid #ffffff;
+    }
+
+    .name::before {
+      content: "";
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin-right: 10px;
+      border-radius: 50px;
+    }
+
+    .name.passed::before, .spec.passed .summary {
+      background-color: #3cb371;
+    }
+
+    .name.failed::before, .spec.failed .summary {
+      background-color: #ff6347;
+    }
+
+    .name:hover {
+      cursor: pointer;
+    }
+
+    .spec {
+      width: 100%;
+    }
+
+    .step {
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      border-bottom: 1px solid #add8e6;
+    }
+
+    .step.passed {
+      background-color: #3cb37166;
+    }
+
+    .step.failed {
+      background-color: #ff634766;
+    }
+
+    .step .content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-left: 20px;
+    }
+
+    .step .content.reverse {
+      flex-direction: column-reverse;
+    }
+
+    code {
+      width: 90%;
+      height: 300px;
+      padding: 10px;
+      background-color: #ffffff;
+      overflow: auto;
+      white-space: pre-wrap;
+    }
+
+    img {
+      width: 300px;
+      margin: 20px 0;
+    }
+
+    .strong {
+      font-weight: 600;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .comparedImages {
+      margin-top: 16px;
+      display: flex;
+    }
+
+    .comparedImages > div:not(:first-child) {
+      margin-left: 16px;
+    }
+
+    .comparedImages > div {
+      display: flex;
+      flex-direction: column;
+    }
+  </style>
+</head>
+<body>
+<div class="suites-menu">
+  
+  <div class="name" onClick="selectSuite(0)">teched</div>
+  
+</div>
+
+<div class="suite hidden">
+  <div class="summary">
+    <span class="strong">Specs</span>
+    <span>Total: 3</span>
+    <span>Passed: 3</span>
+    <span>Failed: 0</span>
+    <span>Pending: 0</span>
+    <span>Disabled: 0</span>
+    <span>Duration: 18.5 sec</span>
+  </div>
+  <div class="specs">
+    <div class="specs-menu">
+      
+      <div class="name passed" onClick="selectSpec(0, 0)">Should validate the home screen</div>
+      
+      <div class="name passed" onClick="selectSpec(0, 1)">Should search for a product</div>
+      
+      <div class="name passed" onClick="selectSpec(0, 2)">Should navigate to the product</div>
+      
+    </div>
+    
+    <div class="spec passed 0 hidden">
+      <div class="summary">
+        <div class="strong">Should validate the home screen</div>
+        
+        <span class="strong">Expectations</span>
+        <span>Total: 1</span>
+        <span>Passed: 1</span>
+        <span>Failed: 0</span>
+        <span>Duration: 7.8 sec</span>
+        
+      </div>
+      
+      
+      <div class="step passed">
+        <p class="strong">1.</p>
+        <div class="content ">
+          
+          <div>Expectation PASSED: Expected &#39;16&#39; toBe &#39;16&#39;</div>
+          
+          
+          
+          <a href="teched-Should-validate-the-home-screen_0_pass_2020-10-06T07-35-28.png" target="_blank">
+            <img data-source="teched-Should-validate-the-home-screen_0_pass_2020-10-06T07-35-28.png"/>
+          </a>
+          
+          
+        </div>
+      </div>
+      
+      
+    </div>
+    
+    <div class="spec passed 1 hidden">
+      <div class="summary">
+        <div class="strong">Should search for a product</div>
+        
+        <span class="strong">Expectations</span>
+        <span>Total: 1</span>
+        <span>Passed: 1</span>
+        <span>Failed: 0</span>
+        <span>Duration: 4.3 sec</span>
+        
+      </div>
+      
+      
+      <div class="step ">
+        <p class="strong">1.</p>
+        <div class="content reverse">
+          
+          
+          <div>Execute 'sendKeys' on element with ID 'container-cart---homeView--searchField-I'
+             with value 'Watch' 
+          </div>
+          
+          
+          <a href="sendKeys_container-cart---homeView--searchField-I_0_2020-10-06T07-35-30.png" target="_blank">
+            <img data-source="sendKeys_container-cart---homeView--searchField-I_0_2020-10-06T07-35-30.png"/>
+          </a>
+          
+          
+        </div>
+      </div>
+      
+      
+      
+      <div class="step passed">
+        <p class="strong">2.</p>
+        <div class="content ">
+          
+          <div>Expectation PASSED: Expected &#39;Flat Watch HD32&#39; toBe &#39;Flat Watch HD32&#39;</div>
+          
+          
+          
+          <a href="teched-Should-search-for-a-product_1_pass_2020-10-06T07-35-32.png" target="_blank">
+            <img data-source="teched-Should-search-for-a-product_1_pass_2020-10-06T07-35-32.png"/>
+          </a>
+          
+          
+        </div>
+      </div>
+      
+      
+    </div>
+    
+    <div class="spec passed 2 hidden">
+      <div class="summary">
+        <div class="strong">Should navigate to the product</div>
+        
+        <span class="strong">Expectations</span>
+        <span>Total: 2</span>
+        <span>Passed: 2</span>
+        <span>Failed: 0</span>
+        <span>Duration: 6.4 sec</span>
+        
+      </div>
+      
+      
+      <div class="step ">
+        <p class="strong">1.</p>
+        <div class="content reverse">
+          
+          
+          <div>Execute 'click' on element with ID '__item0-container-cart---homeView--productList-0-titleText'
+            
+          </div>
+          
+          
+          <a href="click___item0-container-cart---homeView--productList-0-titleText_0_2020-10-06T07-35-34.png" target="_blank">
+            <img data-source="click___item0-container-cart---homeView--productList-0-titleText_0_2020-10-06T07-35-34.png"/>
+          </a>
+          
+          
+        </div>
+      </div>
+      
+      
+      
+      <div class="step passed">
+        <p class="strong">2.</p>
+        <div class="content ">
+          
+          <div>Expectation PASSED: Expected &#39;Flat Watch HD32&#39; toBe &#39;Flat Watch HD32&#39;</div>
+          
+          
+          
+          <a href="teched-Should-navigate-to-the-product_1_pass_2020-10-06T07-35-37.png" target="_blank">
+            <img data-source="teched-Should-navigate-to-the-product_1_pass_2020-10-06T07-35-37.png"/>
+          </a>
+          
+          
+        </div>
+      </div>
+      
+      
+      
+      <div class="step passed">
+        <p class="strong">3.</p>
+        <div class="content ">
+          
+          <div>Expectation PASSED: Expected &#39;true&#39; toBeTruthy &#39;&#39;</div>
+          
+          
+          
+          <a href="teched-Should-navigate-to-the-product_2_pass_2020-10-06T07-35-39.png" target="_blank">
+            <img data-source="teched-Should-navigate-to-the-product_2_pass_2020-10-06T07-35-39.png"/>
+          </a>
+          
+          
+        </div>
+      </div>
+      
+      
+    </div>
+    
+  </div>
+</div>
+
+<script>
+  (function init () {
+    var suiteMenuElement = document.getElementsByClassName("suites-menu")[0];
+    var specMenuElement = document.getElementsByClassName("specs-menu")[0];
+    selectSuite(0);
+  })();
+
+  function selectSuite(suiteIndex) {
+    select(document, suiteIndex, "suites-menu", "suite");
+    selectSpec(suiteIndex, 0);
+  }
+
+  function selectSpec(suiteIndex, specIndex) {
+    var parentElement = document.getElementsByClassName("specs")[suiteIndex];
+    select(parentElement, specIndex, "specs-menu", "spec");
+
+    var specElements = parentElement.getElementsByClassName("spec");
+    var specImageElements = specElements[specIndex].getElementsByTagName("img");
+    Array.prototype.forEach.call(specImageElements, function (img) {
+      img.src = img.getAttribute("data-source");
+    });
+  }
+
+  function select(parentElement, index, menuClassName, itemClassName) {
+    var menuElement = parentElement.getElementsByClassName(menuClassName)[0];
+    var menuElements = menuElement.getElementsByClassName("name");
+    Array.prototype.forEach.call(menuElements, function (el) {
+      el.classList.remove("selected");
+    });
+    menuElements[index].classList.add("selected");
+
+    var itemElements = parentElement.getElementsByClassName(itemClassName);
+    Array.prototype.forEach.call(itemElements, function (el) {
+      el.classList.add("hidden");
+    });
+    itemElements[index].classList.remove("hidden");
+  }
+</script>
+</body>
+</html>
